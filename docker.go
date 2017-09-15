@@ -23,9 +23,10 @@ import (
 
 // Container is the definition for a container type in marathon
 type Container struct {
-	Type    string    `json:"type,omitempty"`
-	Docker  *Docker   `json:"docker,omitempty"`
-	Volumes *[]Volume `json:"volumes,omitempty"`
+	Type           string         `json:"type,omitempty"`
+	Docker         *Docker        `json:"docker,omitempty"`
+	Volumes        *[]Volume      `json:"volumes,omitempty"`
+	PortMappings   *[]PortMapping `json:"portMappings,omitempty"`
 }
 
 // PortMapping is the portmapping structure between container and mesos
@@ -126,7 +127,6 @@ type Docker struct {
 	Image          string         `json:"image,omitempty"`
 	Network        string         `json:"network,omitempty"`
 	Parameters     *[]Parameters  `json:"parameters,omitempty"`
-	PortMappings   *[]PortMapping `json:"portMappings,omitempty"`
 	Privileged     *bool          `json:"privileged,omitempty"`
 }
 
