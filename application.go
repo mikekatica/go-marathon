@@ -84,7 +84,7 @@ type Application struct {
 	BackoffSeconds             *float64            `json:"backoffSeconds,omitempty"`
 	BackoffFactor              *float64            `json:"backoffFactor,omitempty"`
 	MaxLaunchDelaySeconds      *float64            `json:"maxLaunchDelaySeconds,omitempty"`
-	Networks                   *[]Networks         `json:"networks,omitempty"`
+	Networks                   *[]Network         `json:"networks,omitempty"`
 	TaskKillGracePeriodSeconds *float64            `json:"taskKillGracePeriodSeconds,omitempty"`
 	Deployments                []map[string]string `json:"deployments,omitempty"`
 	// Available when embedding readiness information through query parameter.
