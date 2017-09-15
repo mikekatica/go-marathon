@@ -47,6 +47,12 @@ type Discovery struct {
 	Ports *[]Port `json:"ports,omitempty"`
 }
 
+//Network Defines the parameters of the containers networks, which sort of replaces IP-Per-Task functionality
+type Network struct {
+	Mode string `json:"mode"`
+	Name string `json:"name,omitempty"`
+}
+
 // Port provides info about ports used by IP-per-task
 type Port struct {
 	Number   int    `json:"number,omitempty"`
@@ -78,6 +84,7 @@ type Application struct {
 	BackoffSeconds             *float64            `json:"backoffSeconds,omitempty"`
 	BackoffFactor              *float64            `json:"backoffFactor,omitempty"`
 	MaxLaunchDelaySeconds      *float64            `json:"maxLaunchDelaySeconds,omitempty"`
+	Networks                   *[]Networks         `json:"networks,omitempty"`
 	TaskKillGracePeriodSeconds *float64            `json:"taskKillGracePeriodSeconds,omitempty"`
 	Deployments                []map[string]string `json:"deployments,omitempty"`
 	// Available when embedding readiness information through query parameter.
